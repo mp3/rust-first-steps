@@ -9,4 +9,7 @@ fn main() {
     println!("The number is {}", a_number);
 
     println!("the boolean is {}", a_boolean);
+
+    let number: u32 = "42".parse().expect("Not a number!");
+    println!("u32 number {}", number);
 }
