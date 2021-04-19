@@ -13,6 +13,7 @@ fn main() {
     let number: u32 = "42".parse().expect("Not a number!");
     println!("u32 number {}", number);
 
+    // Number
     // Addition
     println!("1 + 2 = {}", 1u32 + 2);
 
@@ -27,4 +28,8 @@ fn main() {
 
     // Multiplication
     println!("3 * 6 = {}", 3 * 6);
+
+    // Boolean
+    let is_bigger = 1 > 4;
+    println!("{}", is_bigger);
 }
