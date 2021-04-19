@@ -99,7 +99,14 @@ fn instantiate() {
 enum WebEvent {
     PageLoad,
     PageUnload,
-    KeyPress(char),
+    KeyPress(KeyPress),
     Paste(String),
-    Click { x: i64, y: i64 },
+    Click(Click),
 }
+
+struct Click {
+    x: i64,
+    y: i64
+}
+
+struct KeyPress(char);
