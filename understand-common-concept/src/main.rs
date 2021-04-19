@@ -4,6 +4,7 @@ fn main() {
     boolean();
     char_and_string();
     tuple();
+    instantiate();
 }
 
 fn basic() {
@@ -68,4 +69,37 @@ fn tuple() {
     assert_eq!(tuple.0, "hello");
     assert_eq!(tuple.1, 5);
     assert_eq!(tuple.2, 'c');
+}
+
+// Struct
+struct Person {
+    name: String,
+    age: u8,
+    likes_oranges: bool
+}
+
+struct Point2D(u32, u32);
+
+struct Unit;
+
+fn instantiate() {
+    let person = Person {
+        name: String::from("Adam"),
+        likes_oranges: true,
+        age: 25
+    };
+
+    let origin = Point2D(0, 0);
+
+    let unit = Unit;
+}
+
+
+// Enum
+enum WebEvent {
+    PageLoad,
+    PageUnload,
+    KeyPress(char),
+    Paste(String),
+    Click { x: i64, y: i64 },
 }
