@@ -1,4 +1,12 @@
 fn main() {
+    basic();
+    number();
+    boolean();
+    char_and_string();
+    tuple();
+}
+
+fn basic() {
     let mut a_number = 10;
     let a_boolean = true;
 
@@ -12,7 +20,9 @@ fn main() {
 
     let number: u32 = "42".parse().expect("Not a number!");
     println!("u32 number {}", number);
+}
 
+fn number() {
     // Number
     // Addition
     println!("1 + 2 = {}", 1u32 + 2);
@@ -28,11 +38,15 @@ fn main() {
 
     // Multiplication
     println!("3 * 6 = {}", 3 * 6);
+}
 
+fn boolean() {
     // Boolean
     let is_bigger = 1 > 4;
     println!("{}", is_bigger);
+}
 
+fn char_and_string() {
     // Character and String
     // char
     let c = 'z';
@@ -45,7 +59,9 @@ fn main() {
     hello.push('w');
     hello.push_str("orld!");
     println!("{}", hello);
+}
 
+fn tuple() {
     // Tuple
     let tuple = ("hello", 5, 'c');
 
