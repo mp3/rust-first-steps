@@ -18,7 +18,7 @@ fn car_factory(color: String, transmission: Transmission, convertible: bool) -> 
       transmission: transmission,
       convertible: convertible,
       mileage: 0
-  }
+  };
 
   // Factory's Quality Control Department says that new cars must always have zero mileage!
   assert_eq!(car.mileage, 0);
