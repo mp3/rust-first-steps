@@ -32,4 +32,17 @@ fn main() {
     // Boolean
     let is_bigger = 1 > 4;
     println!("{}", is_bigger);
+
+    // Character and String
+    // char
+    let c = 'z';
+    let z = 'Z';
+    let heart_eyes_cat = '😻';
+    println!("{} {} {}", c, z, heart_eyes_cat);
+
+    // String
+    let mut hello = String::from("Hello, ");
+    hello.push('w');
+    hello.push_str("orld!");
+    println!("{}", hello);
 }
