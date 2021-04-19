@@ -12,4 +12,19 @@ fn main() {
 
     let number: u32 = "42".parse().expect("Not a number!");
     println!("u32 number {}", number);
+
+    // Addition
+    println!("1 + 2 = {}", 1u32 + 2);
+
+    // Substraction
+    println!("1 - 2 = {}", 1i32 - 2);
+
+    // Interger Division
+    println!("9 / 2 = {}", 9u32 / 2);
+
+    // Float Division
+    println!("9 / 2 = {}", 9.0 / 2.0);
+
+    // Multiplication
+    println!("3 * 6 = {}", 3 * 6);
 }
