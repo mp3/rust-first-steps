@@ -1,8 +1,8 @@
-fn print_greeting(message: &String) {
-    println!("{}", message);
+fn main() {
+    let mut greeting = String::from("hello");
+    change(&mut greeting)
 }
 
-fn main() {
-    let greeting = String::from("hello");
-    print_greeting(&greeting)
+fn change(text: &mut String) {
+    text.push_str("!");
 }
