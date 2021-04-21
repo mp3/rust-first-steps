@@ -1,6 +1,8 @@
+fn print_greeting(message: &String) {
+    println!("{}", message);
+}
+
 fn main() {
     let greeting = String::from("hello");
-    let greeting_reference = &greeting;
-    println!("{}", greeting);
-    println!("{}", greeting_reference);
+    print_greeting(&greeting)
 }
