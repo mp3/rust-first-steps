@@ -14,7 +14,7 @@ pub enum Action {
   List,
 }
 
-#[derive((Debug, StructOpt))]
+#[derive(Debug, StructOpt)]
 #[structopt(
   name = "Rusty Journal",
   about = "A comman line to-do app written in Rust"
