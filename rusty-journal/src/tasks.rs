@@ -16,3 +16,12 @@ impl Task {
     Task { text, created_at }
   }
 }
+
+use std::io::Result;
+use std::path::PathBuf;
+
+pub fn add_task(journal_path: PathBuf, task: Task) -> Result<()> { ... }
+
+pub fn complete_task(journal_path: PathBuf, task_position: usize) -> Result<()> { ... }
+
+pub fn list_tasks(journal_path: PathBuf) -> Result<()> { ... }
