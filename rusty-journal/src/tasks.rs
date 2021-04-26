@@ -1,6 +1,10 @@
-use chrono::{ DateTime, Utc };
+use chrono::{serde::ts_seconds, DateTime, Local, Utc};
 use serde::Deserialize;
 use serde::Serialize;
+use std::path::PathBuf;
+use std::fs::{File, OpenOptions};
+use std::io::{Result, Seek, SeekFrom, Error, ErrorKind};
+use std::fmt;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Task {
@@ -17,9 +21,12 @@ impl Task {
   }
 }
 
-use std::path::PathBuf;
-use std::fs::OpenOptions;
-use std::io::{BufReader, Result, Seek, SeekFrom, Error, ErrorKind};
+impl fmt::Display for Task {
+  fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+    let created_at = self.created_at.with_timezone(&Local).format("%F %H:%M");
+    write!(f,  "{:<50} [{}]", self.text, created_at)
+  }
+}
 
 fn collect_tasks(mut file: &File) -> Result<Vec<Task>> {
   file.seek(SeekFrom::Start(0))?;
