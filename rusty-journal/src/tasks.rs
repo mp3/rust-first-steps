@@ -31,11 +31,11 @@ impl fmt::Display for Task {
 fn collect_tasks(mut file: &File) -> Result<Vec<Task>> {
   file.seek(SeekFrom::Start(0))?;
 
-  let mut tasks: Vec<Tasks> = match serde_json::from_reader(file) {
+  let tasks = match serde_json::from_reader(file) {
     Ok(tasks) => tasks,
     Err(e) if e.is_eof() => Vec::new(),
     Err(e) => Err(e)?,
-  }
+  };
 
   file.seek(SeekFrom::Start(0))?;
 
@@ -72,7 +72,7 @@ pub fn complete_task(journal_path: PathBuf, task_position: usize) -> Result<()> 
 
   file.set_len(0)?;
   serde_json::to_writer(file, &tasks)?;
-  OK(())
+  Ok(())
 }
 
 pub fn list_tasks(journal_path: PathBuf) -> Result<()> {
